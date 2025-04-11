@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Billie - Магазин Компьютеров</title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>Billie</h1>
+        <p>Лучшие компьютеры и комплектующие</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        <label for="cart-toggle">🛒</label>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Корзина (скрытая по умолчанию) -->
+  <input type="checkbox" id="cart-toggle" class="cart-toggle">
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Корзина</h3>
+      <label for="cart-toggle" class="close-cart">✕</label>  
+    </div>
+    <div class="cart-items">
+      <!-- Товары в корзине будут здесь -->
+      <div class="empty-cart">Корзина пуста</div>
+    </div>
+    <div class="cart-total">
+      <p>Итого: <span>0 ₽</span></p>
+    </div>
+    <label for="checkout-toggle" class="checkout-btn">Оформить заказ</label>
+  </div>
+
+  <!-- Форма оформления заказа (скрытая по умолчанию) -->
+  <input type="checkbox" id="checkout-toggle" class="checkout-toggle">
+  <div class="checkout-modal">
+    <div class="checkout-content">
+      <div class="checkout-header">
+        <h3>Оформление заказа</h3>
+        <label for="checkout-toggle" class="close-checkout">✕</label>
+      </div>
+      <form class="checkout-form">
+        <div class="form-group">
+          <label for="name">ФИО</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Адрес доставки</label>
+          <textarea id="address" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="payment">Способ оплаты</label>
+          <select id="payment" required>
+            <option value="">Выберите способ оплаты</option>
+            <option value="card">Банковская карта</option>
+            <option value="cash">Наличными при получении</option>
+            <option value="online">СБП</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Комментарий к заказу</label>
+          <textarea id="comment"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="submit-order">Подтвердить заказ</button>
+          <label for="checkout-toggle" class="cancel-order">Отмена</label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="hero-banner">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Собери свой идеальный компьютер</h2>
+        <p>Широкий выбор комплектующих от ведущих производителей</p>
+        <a href="#products" class="hero-btn">Смотреть каталог</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Наш каталог</h2>
+        <p>Выберите категорию товаров</p>
+      </div>
+      
+      <div class="tabs">
+        <input type="radio" id="tab1" name="tab-control" checked>
+        <input type="radio" id="tab2" name="tab-control">
+        <input type="radio" id="tab3" name="tab-control">
+        <input type="radio" id="tab4" name="tab-control">
+        <input type="radio" id="tab5" name="tab-control">
+        
+        <ul>
+          <li><label for="tab1">Компьютеры</label></li>
+          <li><label for="tab2">Процессоры</label></li>
+          <li><label for="tab3">Видеокарты</label></li>
+          <li><label for="tab4">Память</label></li>
+          <li><label for="tab5">Накопители</label></li>
+        </ul>
+        
+        <div class="slider"><div class="indicator"></div></div>
+        
+        <div class="content">
+          <section>
+            <h2>Готовые компьютеры</h2>
+            <div class="products">
+              <div class="product-card">
+                <div class="product-badge">Хит продаж</div>
+                <img src="img/titan.png" alt="Игровой ПК Титан">
+                <h3>Игровой ПК "Титан"</h3>
+                <div class="specs">
+                  <p> Процессор: </p> Intel Core i9-13900K
+                  <p> Видеокарта: </p> NVIDIA RTX 4090 24GB
+                  <p> Память:</p>  64GB DDR5 5600MHz
+                  <p> Накопитель: </p> 2TB NVMe SSD + 4TB HDD
+                  <p> Охлаждение:</p>  Жидкостное
+                </div>
+                <div class="price">189 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Выгодно</div>
+                <img src="img/office PK.jpg" alt="Офисный ПК Стандарт">
+                <h3>Офисный ПК "Стандарт"</h3>
+                <div class="specs">
+                  <p> Процессор: </p> Intel Core i5-13400
+                  <p> Видеокарта:</p>  Интегрированная Intel UHD
+                  <p> Память: </p> 16GB DDR4 3200MHz
+                  <p> Накопитель:</p>  512GB NVMe SSD
+                  <p> Охлаждение:</p>  Воздушное
+                </div>
+                <div class="price">49 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <img src="img/media PK.jpg" alt="Мультимедийный ПК Креатив">
+                <h3>Мультимедийный ПК "Креатив"</h3>
+                <div class="specs">
+                  <p> Процессор: </p> AMD Ryzen 9 7950X
+                  <p> Видеокарта:</p>  AMD Radeon RX 7900 XT
+                  <p> Память: </p> 32GB DDR5 5200MHz
+                  <p> Накопитель: </p> 1TB NVMe SSD + 2TB HDD
+                  <p> Охлаждение: </p> Воздушное премиум
+                </div>
+                <div class="price">129 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Процессоры</h2>
+            <div class="products">
+              <div class="product-card">
+                <div class="product-badge">Топ продаж</div>
+                <img src="img/Intel Core i9-13900K.jpg" alt="Intel Core i9-13900K">
+                <h3>Intel Core i9-13900K</h3>
+                <div class="specs">
+                  <p> Ядра/Потоки: </p> 24 (8P+16E) / 32
+                  <p> Базовая частота: </p> 3.0 GHz (P-core)
+                  <p> Турбо частота:</p>  до 5.8 GHz
+                  <p> Кэш:</p>  36MB
+                  <p> TDP:</p>  125W
+                </div>
+                <div class="price">49 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <img src="img/AMD Ryzen 9 7950X.jpg" alt="AMD Ryzen 9 7950X">
+                <h3>AMD Ryzen 9 7950X</h3>
+                <div class="specs">
+                  <p> Ядра/Потоки: </p> 16 / 32
+                  <p> Базовая частота: </p> 4.5 GHz
+                  <p> Турбо частота:</p>  до 5.7 GHz
+                  <p> Кэш:</p>  80MB
+                  <p> TDP: </p> 170W
+                </div>
+                <div class="price">45 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Выгодно</div>
+                <img src="img/Intel Core i5-13600K.jpg" alt="Intel Core i5-13600K">
+                <h3>Intel Core i5-13600K</h3>
+                <div class="specs">
+                  <p> Ядра/Потоки:</p>  14 (6P+8E) / 20
+                  <p> Базовая частота:</p>  3.5 GHz (P-core)
+                  <p> Турбо частота: </p> до 5.1 GHz
+                  <p> Кэш:</p>  24MB
+                  <p> TDP: </p> 125W
+                </div>
+                <div class="price">25 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Видеокарты</h2>
+            <div class="products">
+              <div class="product-card">
+                <div class="product-badge">Премиум</div>
+                <img src="img/NVIDIA GeForce RTX 4090.jpg" alt="NVIDIA GeForce RTX 4090">
+                <h3>NVIDIA GeForce RTX 4090</h3>
+                <div class="specs">
+                  <p> Память: </p> 24GB GDDR6X
+                  <p> Частота ядра:</p>  2.23 GHz (Boost до 2.52 GHz)
+                  <p> Шина памяти:</p>  384-bit
+                  <p> CUDA ядра:</p>  16384
+                  <p> TDP: </p> 450W
+                </div>
+                <div class="price">159 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <img src="img/AMD Radeon RX 7900 XTX.jpg" alt="AMD Radeon RX 7900 XTX">
+                <h3>AMD Radeon RX 7900 XTX</h3>
+                <div class="specs">
+                  <p> Память: </p> 24GB GDDR6</p>
+                  <p> Частота ядра:</p>  2.3 GHz (Boost до 2.5 GHz)
+                  <p> Шина памяти:</p>  384-bit
+                  <p> Потоковые процессоры: </p> 12288
+                  <p> TDP: </p> 355W
+                </div>
+                <div class="price">119 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Хит продаж</div>
+                <img src="img/NVIDIA GeForce RTX 4070.jpg" alt="NVIDIA GeForce RTX 4070">
+                <h3>NVIDIA GeForce RTX 4070</h3>
+                <div class="specs">
+                  <p> Память:  </p>12GB GDDR6X
+                  <p> Частота ядра:</p>  1.92 GHz (Boost до 2.48 GHz)
+                  <p> Шина памяти: </p> 192-bit
+                  <p> CUDA ядра: </p> 5888
+                  <p> TDP: </p> 200W
+                </div>
+                <div class="price">69 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Оперативная память</h2>
+            <div class="products">
+              <div class="product-card">
+                <img src="img/Corsair Vengeance RGB DDR5.jpg" alt="Corsair Vengeance RGB DDR5">
+                <h3>Corsair Vengeance RGB DDR5</h3>
+                <div class="specs">
+                  <p> Объем:</p>  32GB (2x16GB)
+                  <p> Частота:</p>  6000MHz
+                  <p> Тайминги:</p>  CL36-36-36-76
+                  <p> Напряжение:</p>  1.35V
+                  <p> Подсветка: </p> RGB
+                </div>
+                <div class="price">15 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Новинка</div>
+                <img src="img/G.Skill Trident Z5 RGB.jpg" alt="G.Skill Trident Z5 RGB">
+                <h3>G.Skill Trident Z5 RGB</h3>
+                <div class="specs">
+                  <p> Объем:</p>  64GB (2x32GB)</p>
+                  <p> Частота:</p>  5600MHz
+                  <p> Тайминги:</p>  CL40-40-40-76
+                  <p> Напряжение:</p>  1.2V
+                  <p> Подсветка:</p>  RGB
+                </div>
+                <div class="price">29 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Выгодно</div>
+                <img src="img/Kingston FURY Beast DDR4.jpg" alt="Kingston FURY Beast DDR4">
+                <h3>Kingston FURY Beast DDR4</h3>
+                <div class="specs">
+                  <p> Объем: </p> 16GB (2x8GB)
+                  <p> Частота:</p>  3600MHz
+                  <p> Тайминги:</p>  CL18-22-22
+                  <p> Напряжение:</p>  1.35V
+                  <p> Подсветка: </p> Нет
+                </div>
+                <div class="price">5 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+            </div>
+          </section>
+          
+          <section>
+            <h2>Накопители</h2>
+            <div class="products">
+              <div class="product-card">
+                <div class="product-badge">Новинка</div>
+                <img src="img/2 TB.png" alt="Samsung 990 PRO">
+                <h3>Samsung 990 PRO NVMe SSD</h3>
+                <div class="specs">
+                  <p> Объем:</p>   2TB
+                  <p> Интерфейс: </p>  PCIe 4.0 x4
+                  <p> Скорость чтения:</p>   до 7450 MB/s
+                  <p> Скорость записи:</p>   до 6900 MB/s
+                  <p> MTBF: </p>  1.5 млн. часов
+                </div>
+                <div class="price">19 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <img src="img/WD Black SN850X NVMe SSD.jpg" alt="WD Black SN850X">
+                <h3>WD Black SN850X NVMe SSD</h3>
+                <div class="specs">
+                  <p> Объем: </p> 1TB
+                  <p> Интерфейс: </p> PCIe 4.0 x4
+                  <p> Скорость чтения:</p>  до 7300 MB/s
+                  <p> Скорость записи: </p> до 6300 MB/s
+                  <p> MTBF: </p> 1.75 млн. часов
+                </div>
+                <div class="price">12 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+              <div class="product-card">
+                <div class="product-badge">Выгодно</div>
+                <img src="img/Seagate Barracuda HDD.jpg" alt="Seagate Barracuda">
+                <h3>Seagate Barracuda HDD</h3>
+                <div class="specs">
+                  <p> Объем: </p>  4TB
+                  <p> Интерфейс:  </p> SATA 6 Gb/s
+                  <p> Скорость вращения: </p>  5400 RPM
+                  <p> Кэш: </p>  256MB
+                  <p> Форм-фактор: </p> 3.5"
+                </div>
+                <div class="price">7 999 ₽</div>
+                <label class="buy-btn" for="cart-toggle">В корзину</label>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Почему выбирают нас</h2>
+        <p>Преимущества покупки в Billie</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>Быстрая доставка</h3>
+          <p>Доставляем заказы по всей России в кратчайшие сроки. Для жителей Москвы и Санкт-Петербурга возможна доставка в день заказа.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Гарантия качества</h3>
+          <p>На все товары предоставляется официальная гарантия от производителя. Дополнительно предлагаем расширенную гарантию до 3-х лет.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Выгодные цены</h3>
+          <p>Регулярные акции и специальные предложения. Программа лояльности для постоянных клиентов с накопительными скидками.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍💻</div>
+          <h3>Профессиональная консультация</h3>
+          <p>Наши специалисты помогут подобрать оптимальную конфигурацию компьютера под ваши задачи и бюджет.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular-builds" id="builds">
+    <div class="container">
+      <div class="section-header">
+        <h2>Популярные сборки</h2>
+        <p>Готовые решения для различных задач</p>
+      </div>
+      <div class="builds-grid">
+        <div class="build-card">
+          <img src="img/Gamer.jpg" alt="Игровая сборка">
+          <div class="build-info">
+            <h3>Игровая сборка "Ультра"</h3>
+            <p>Мощный игровой компьютер для самых требовательных игр на максимальных настройках и с поддержкой технологии трассировки лучей.</p>
+            <ul>
+              <li>Intel Core i9-13900K</li>
+              <li>NVIDIA GeForce RTX 4090</li>
+              <li>64GB DDR5 RAM</li>
+              <li>2TB NVMe SSD</li>
+              <li>Жидкостное охлаждение</li>
+            </ul>
+            <div class="build-price">от 199 999 ₽</div>
+            <label class="build-btn" for="cart-toggle">Добавить в корзину</label>
+          </div>
+        </div>
+        <div class="build-card">
+          <img src="img/work table.jpg" alt="Рабочая станция">
+          <div class="build-info">
+            <h3>Рабочая станция "Профи"</h3>
+            <p>Профессиональная рабочая станция для дизайнеров, архитекторов и инженеров. Оптимизирована для работы с графикой и 3D-моделированием.</p>
+            <ul>
+              <li>AMD Ryzen Threadripper PRO</li>
+              <li>NVIDIA RTX A5000</li>
+              <li>128GB ECC RAM</li>
+              <li>4TB NVMe RAID</li>
+              <li>Двойное жидкостное охлаждение</li>
+            </ul>
+            <div class="build-price">от 349 999 ₽</div>
+            <label class="build-btn" for="cart-toggle">Добавить в корзину</label>
+          </div>
+        </div>
+        <div class="build-card">
+          <img src="img/home PK.jpg" alt="Домашний компьютер">
+          <div class="build-info">
+            <h3>Домашний ПК "Комфорт"</h3>
+            <p>Универсальный компьютер для дома и офиса. Подходит для работы, учебы, просмотра фильмов и нетребовательных игр.</p>
+            <ul>
+              <li>Intel Core i5-13400</li>
+              <li>NVIDIA GeForce RTX 3050</li>
+              <li>16GB DDR4 RAM</li>
+              <li>512GB NVMe SSD + 1TB HDD</li>
+              <li>Тихое воздушное охлаждение</li>
+            </ul>
+            <div class="build-price">от 69 999 ₽</div>
+            <label class="build-btn" for="cart-toggle">Добавить в корзину</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Отзывы клиентов</h2>
+        <p>Что говорят о нас наши покупатели</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Заказывал игровой ПК Титан. Доставили быстро, все работает отлично. Игры летают на ультра-настройках. Очень доволен покупкой!"</p>
+          <div class="testimonial-author">Алексей К.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Консультанты помогли подобрать оптимальную конфигурацию для моих задач по 3D-моделированию. Сэкономил приличную сумму и получил именно то, что нужно."</p>
+          <div class="testimonial-author">Марина В.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★☆</div>
+          <p class="testimonial-text">"Хороший магазин с адекватными ценами. Заказывал комплектующие для апгрейда. Все пришло в срок и хорошо упаковано. Минус звезда за небольшую задержку с доставкой."</p>
+          <div class="testimonial-author">Дмитрий П.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-text">"Покупала компьютер для сына-геймера. Менеджер терпеливо объяснил все нюансы и помог выбрать оптимальный вариант. Сын в восторге, я тоже довольна обслуживанием."</p>
+          <div class="testimonial-author">Елена С.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>О компании</h2>
+        <p>Узнайте больше о Billie</p>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="img/logo.png" alt="О компании Billie">
+        </div>
+        <div class="about-text">
+          <h3>Мы создаем технологическое будущее</h3>
+          <p>Компания Billie основана в 2010 году группой энтузиастов компьютерной техники. За 15 лет работы мы выросли из небольшого магазина в одного из лидеров рынка компьютерной техники в России.</p>
+          <p>Наша миссия — делать современные технологии доступными для каждого. Мы не просто продаем компьютеры и комплектующие, мы помогаем нашим клиентам найти оптимальные решения для их задач.</p>
+          <p>В нашей команде работают сертифицированные специалисты с многолетним опытом в сфере IT. Мы постоянно следим за новинками рынка и регулярно обновляем ассортимент.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">лет на рынке</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">50 000+</div>
+              <div class="stat-label">довольных клиентов</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5 000+</div>
+              <div class="stat-label">товаров в каталоге</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">техническая поддержка</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Наши услуги</h2>
+        <p>Дополнительные сервисы для наших клиентов</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Сборка компьютеров</h3>
+          <p>Профессиональная сборка компьютера из выбранных вами комплектующих с гарантией качества.</p>
+          <div class="service-price">от 1 500 ₽</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Апгрейд системы</h3>
+          <p>Модернизация вашего компьютера для повышения производительности и расширения функциональности.</p>
+          <div class="service-price">от 1 000 ₽</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Установка ПО</h3>
+          <p>Установка операционной системы, драйверов и необходимого программного обеспечения.</p>
+          <div class="service-price">от 1 200 ₽</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧹</div>
+          <h3>Чистка и обслуживание</h3>
+          <p>Профессиональная чистка компьютера от пыли, замена термопасты и обслуживание системы охлаждения.</p>
+          <div class="service-price">от 1 800 ₽</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Диагностика</h3>
+          <p>Комплексная диагностика компьютера для выявления неисправностей и проблем в работе.</p>
+          <div class="service-price">от 800 ₽</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Расширенная гарантия</h3>
+          <p>Дополнительная гарантия на компьютер или комплектующие сверх стандартной гарантии производителя.</p>
+          <div class="service-price">от 3 000 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div class="section-header">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами любым удобным способом</p>
+      </div>
+      <div class="contacts-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <h3>Телефон</h3>
+            <p>+7 (800) 555-35-35</p>
+            <p>+7 (495) 123-45-67</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <h3>Email</h3>
+            <p>sedlenek21ИС-29.ru</p>
+            <p>КолледжГодовикова.ru</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <h3>Адрес</h3>
+            <p>г. Москва, ул. Костромская, 42</p>
+            <p>Ежедневно с 10:00 до 22:00</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <h3>Социальные сети</h3>
+            <div class="social-links">
+              <a href="https://vk.com/pkgod" class="social-link" target="_blank"> VK</a>
+              <a href="https://web.telegram.org/a/#7831329564" class="social-link" target="_blank"> Telegram</a>
+              <a href="https://www.youtube.com/watch?v=fxCB06y8yo4" class="social-link" target="_blank">YouTube</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Остались вопросы?</h3>
+          <p>Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+          <form>
+            <div class="form-group">
+              <label for="contact-name">Ваше имя</label>
+              <input type="text" id="contact-name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Телефон</label>
+              <input type="tel" id="contact-phone">
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Сообщение</label>
+              <textarea id="contact-message" required></textarea>
+            </div>
+            <button type="submit" class="submit-form">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Billie</h3>
+          <p>Ваш надежный поставщик компьютерной техники с 2010 года</p>
+          <div class="footer-logo">
+            <h2>Billie</h2>
+            <p>Технологии будущего сегодня</p>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Информация</h3>
+          <ul>
+            <li><a href="#about">О компании</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#">Доставка и оплата</a></li>
+            <li><a href="#">Гарантия</a></li>
+            <li><a href="#">Политика конфиденциальности</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Контакты</h3>
+          <p>Телефон: +7 (800) 555-35-35</p>
+          <p>Email: sedlenek21ИС-29.ru</p>
+          <p>Адрес: г. Москва, ул. Костромская, 42</p>
+          <p>Ежедневно с 10:00 до 22:00</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Billie. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Уведомление о добавлении в корзину -->
+  <div class="notification">
+    <div class="notification-content">
+      <p>Товар добавлен в корзину</p>
+    </div>
+  </div>
+
+  <!-- Уведомление об успешном оформлении заказа -->
+  <div class="order-success">
+    <div class="order-success-content">
+      <h3>Заказ успешно оформлен!</h3>
+      <p>Спасибо за покупку. Наш менеджер свяжется с вами в ближайшее время.</p>
+      <button class="close-success">Закрыть</button>
+    </div>
+  </div>
+</body>
+</html>
